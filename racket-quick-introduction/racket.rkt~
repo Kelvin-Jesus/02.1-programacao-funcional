@@ -47,38 +47,3 @@
 ; you pass a new function as argument an that
 ; function don't have a name
 (series (lambda (size) (checkerboard (square size))))
-
-; 04 Lexical Scope
-; Starts looking in the inner scope then looks outside
-(define (rgb-series mk)
-  (vc-append
-   (series (lambda (sz) (colorize (mk sz) "red")))
-   (series (lambda (sz) (colorize (mk sz) "green")))
-   (series (lambda (sz) (colorize (mk sz) "blue")))))
-
-(rgb-series circle)
-(rgb-series square)
-
-(define (rgb-maker mk)
-  (lambda (sz)
-    (vc-append (colorize (mk sz) "red")
-               (colorize (mk sz) "green")
-               (colorize (mk sz) "blue"))))
-
-(series (rgb-maker circle))
-(series (rgb-maker square))
-
-; 05 - Lists
-; Lists its an important part of Racket, since its inspired by Lisp
-; List takes any number of arguments and returns a list with it
-(list "red" "green" "blue")
-(list (colorize (circle 10) "red") (colorize (square 10) "purple"))
-
-(define (rainbow squareFunction)
-  (map (lambda (color)
-         (colorize squareFunction color))
-       (list "red" "orange" "yellow" "green" "blue" "purple")))
-
-(rainbow (square 10))
-
-(apply vc-append (rainbow (square 10)))
