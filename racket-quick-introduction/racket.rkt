@@ -34,7 +34,7 @@
     (four fourCheckers)))
 
 (checkerboard (square 20))
-         
+
 ; 03 Functions are Values
 ; Can define functions that accept functions as arguments
 (define (series mk)
