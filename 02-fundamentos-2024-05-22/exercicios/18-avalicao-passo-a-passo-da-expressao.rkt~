@@ -1,0 +1,10 @@
+#lang racket
+
+; Qual o resultado da avaliação da expressão (* 3 (+ 1 2) (/ 10 2) 2)? Mostre o passo a passo da
+; avaliação.
+(* 3 (+ 1 2) (/ 10 2) 2)
+(* 3 3 (/ 10 2) 2)
+(* 9 (/ 10 2) 2)
+(* 9 5 2)
+(* 45 2)
+90
