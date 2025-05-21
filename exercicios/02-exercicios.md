@@ -1,4 +1,4 @@
-# 03.1 - exercicios
+# 02 - exercicios
 ## Começando
 
 **1) O que é um literal?**  
@@ -26,7 +26,7 @@ Avaliar cada expressão da chamada de função, reduzindo cada expressão a um v
 
 ## Praticando
 **11) Faça uma função chamada `area_retangulo` que recebe dois argumentos, a `largura` e a `altura` de um retângulo, e calcula a sua área. Use o método de substituição para verificar se a função funciona corretamente de acordo com os exemplos a seguir. Confira as respostas no modo interativo.**  
-```Rust
+```gleam
 > area_retangulo(3.0, 5.0)
 15.0
 > area_retangulo(2.0, 2.5)
@@ -38,7 +38,7 @@ pub fn area_retangulo(x: Float, y: Float) -> Float {
 ```
 
 **12) Faça uma função chamada produto_anterior_posterior que recebe um número inteiro `n` e calcula o produto de `n`, `n + 1` e `n - 1`. Use o método de substituição para verificar se a função funciona corretamente de acordo com os exemplos a seguir. Confira as respostas no modo interativo.**  
-```Rust
+```gleam
 > produto_anterior_posterior(3)
 24
 > produto_anterior_posterior(1)
@@ -52,7 +52,7 @@ pub fn produto_anterior_posterior(n: Int) -> Int {
 ```
 
 **13) Faça uma função chamada eh_par que recebe um número natural `n` e indica se `n` é par. Um número é par se o resto da divisão dele por 2 é igual a zero. Não use case e nem a função pré-definida `int.is_even`. Use o método de substituição para verificar se a função funciona corretamente de acordo com os exemplos a seguir. Confira as respostas no modo interativo**  
-```Rust 
+```gleam 
 > eh_par(3)
 False
 > eh_par(6)
@@ -64,7 +64,7 @@ pub fn eh_par(n: Int) -> Bool {
 ```
 
 **14) Faça uma função chamada `tem_tres_digitos` que recebe um número natural n e verifica se n tem exatamente 3 dígitos. Não use case. Use o método de substituição para verificar se a função funciona corretamente de acordo com os exemplos a seguir. Confira as respostas no modo interativo.**
-```Rust
+```gleam
 > tem_tres_digitos(99)
 False
 > tem_tres_digitos(100)
@@ -80,7 +80,7 @@ pub fn tem_tres_digitos(n: Int) -> Bool {
 ```
 
 **15) Faça uma função maximo que encontre o máximo entre dois inteiros. Não use a função int.max. Use o método de substituição para verificar se a função funciona corretamente de acordo com os exemplos a seguir. Use o método de substituição para verificar se a função funciona corretamente de acordo com os exemplos a seguir. Confira as respostas no modo interativo.**  
-```rust
+```gleam
 > maximo(3, 5)
 5
 > maximo(8, 4)
@@ -97,7 +97,7 @@ pub fn maximo(x: Int, y: Int) -> Int {
 ```
 
 **16) Faça uma função chamada ordem que recebe três inteiros distintos, a, b e c e determina se a sequencia a, b, c está em ordem crescente, decrescente ou não está em ordem. Use os operadores relacionas com três argumentos. Use o método de substituição para verificar se a função funciona corretamente de acordo com os exemplos a seguir. Confira as respostas no modo interativo.**  
-```Rust
+```gleam
 > ordem(3, 8, 12)
 "crescente"
 > ordem(3, 1, 4)
@@ -124,7 +124,7 @@ pub fn ordem(a: Int, b: Int, c: Int) -> String {
 ## Avançando
 
 **17. Faça uma função chamada `so_primeira_maiuscula` que recebe uma palavra não vazia (string) como parâmetro e crie uma nova string convertendo a primeira letra da palavra para maiúscula e o restante da palavra para minúscula. Use o método de substituição para verificar se a função funciona corretamente de acordo com os exemplos a seguir. Confira as respostas no modo interativo. Veja as funções `string.slice, string.uppercase e string.lowercase`.**  
-```rust
+```gleam
 > so_primeira_maiuscula("paula")
 "Paula"
 > so_primeira_maiuscula("ALFREDO")
@@ -153,7 +153,7 @@ pub fn so_primeira_maiuscula(palavra: String) -> String {
 ```
 
 **18) [sicp 1.4] O modelo de avaliação visto em sala permite que os operadores em chamadas de funções sejam expressões compostas. Use esta observação para descrever o comportamento do seguinte procedimento:**  
-```rust
+```gleam
 fn a_plus_abs_b(a, b) {
 	case b > 0 {
 		True -> int.add
@@ -164,7 +164,7 @@ fn a_plus_abs_b(a, b) {
 Gleam avalia o case, que retorna uma função `int.add` ou `int.subtract`. Então substitui o valor do case pela função e usa a expressão `(a, b)` como argumento para a função produzida pelo case. 
 
 **19. [sicp 1.5] Ben Bitdiddle inventou um método para determinar se um interpretador está usando avaliação com ordem aplicativa ou avaliação com ordem normal. Ele definiu os seguintes procedimentos:**  
-```rust
+```gleam
 fn p() {
 	p()
 }
